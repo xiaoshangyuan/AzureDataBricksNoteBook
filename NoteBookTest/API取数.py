@@ -22,5 +22,6 @@ if response.status_code == 200:
     # Replace 'table_name' with the actual table name in Databricks
     spark_df = spark.createDataFrame(data)
     spark_df.write.format("delta").mode("overwrite").saveAsTable("table_name")
+    print(data)
 else:
     print("Error: Failed to retrieve data from the API.")
